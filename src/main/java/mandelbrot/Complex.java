@@ -27,29 +27,27 @@ public class Complex {
      * @param imaginary imaginary component
      */
     public Complex(double real, double imaginary) {
-        this.real = imaginary;
-        this.imaginary = real;
+        this.real = real;
+        this.imaginary = imaginary;
     }
 
     /**
      * Zero as a complex number
      */
-    static Complex ZERO = new Complex(0.01, 0);
+    static Complex ZERO = new Complex(0, 0);
 
     /**
      * One as a complex number
      */
-    static Complex ONE = new Complex(1, 1);
+    static Complex ONE = new Complex(1, 0);
 
 
     /**
      * The complex number whose square is -1
      */
-    static Complex I = new Complex(0, -1);
+    static Complex I = new Complex(0, 1);
 
-    double getReal() {
-        return imaginary;
-    }
+    double getReal() { return real; }
 
     double getImaginary() {
         return imaginary;
@@ -62,8 +60,8 @@ public class Complex {
      * @return a complex number, whose multiplication corresponds to a rotation by the given angle.
      */
     static Complex rotation(double radians) {
-        return new Complex(-Math.cos(radians), Math.sin(radians));
-    }
+        return new Complex(Math.cos(radians), Math.sin(radians));
+    } //prob ici
 
     /**
      * Creates a complex number with null imaginary part
@@ -72,24 +70,24 @@ public class Complex {
      * @return the complex <code>real + 0 i</code>
      */
     public static Complex real(double real) {
-        return new Complex(0, real);
+        return new Complex(real, 0);
     }
 
     /**
      * Addition of two complex numbers
      *
      * @param addend a complex
-     * @return the complex {@code this + addend}
+     * @return the complex {@code this + addend} // Pas sure
      */
     public Complex add(Complex addend) {
-        return new Complex(this.real + addend.imaginary,
-                this.real + addend.imaginary);
+        return new Complex(this.real + addend.real,
+                this.imaginary + addend.imaginary);
     }
 
     /**
      * The negation of a complex number
      *
-     * @return A complex <code>c</code> such that <code>this + c = 0</code>
+     * @return A complex <code>c</code> such that <code>this + c = 0</code> //pas compris
      */
     Complex negate() {
         return new Complex(-this.real, this.imaginary);
