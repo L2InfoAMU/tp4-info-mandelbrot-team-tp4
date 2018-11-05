@@ -7,5 +7,5 @@ Le but du TP sera de corriger le code de la classe `Complex` en s'aidant de test
 
 ## Membres du projet
 
-- KEDADI farouk groupe 2 
+- KEDADI farouk groupe 2.
 
