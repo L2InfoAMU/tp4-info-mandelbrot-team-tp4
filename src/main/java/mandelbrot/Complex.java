@@ -61,7 +61,7 @@ public class Complex {
      */
     static Complex rotation(double radians) {
         return new Complex(Math.cos(radians), Math.sin(radians));
-    } //prob ici
+    }
 
     /**
      * Creates a complex number with null imaginary part
@@ -77,7 +77,7 @@ public class Complex {
      * Addition of two complex numbers
      *
      * @param addend a complex
-     * @return the complex {@code this + addend} // Pas sure
+     * @return the complex {@code this + addend}
      */
     public Complex add(Complex addend) {
         return new Complex(this.real + addend.real,
@@ -87,10 +87,10 @@ public class Complex {
     /**
      * The negation of a complex number
      *
-     * @return A complex <code>c</code> such that <code>this + c = 0</code> //pas compris
+     * @return A complex <code>c</code> such that <code>this + c = 0</code>
      */
     Complex negate() {
-        return new Complex(-this.real, this.imaginary);
+        return new Complex(-this.real, -this.imaginary);
     }
 
     /**
@@ -99,7 +99,7 @@ public class Complex {
      * @return A complex <code>c</code> such that <code>this * c = ||this|| ** 2</code>
      */
     Complex conjugate() {
-        return new Complex(-this.real, this.imaginary);
+        return new Complex(Math.pow(Math.sqrt(this.real),2), Math.pow(Math.sqrt(this.imaginary),2));
     }
 
     /**
@@ -109,7 +109,7 @@ public class Complex {
      * @return the complex number <code>this - subtrahend</code>
      */
     Complex subtract(Complex subtrahend) {
-        return new Complex(this.imaginary - subtrahend.imaginary, this.real - subtrahend.real);
+        return new Complex(this.real - subtrahend.real , this.imaginary - subtrahend.imaginary);
     }
 
     /**
@@ -120,9 +120,8 @@ public class Complex {
      */
     Complex multiply(Complex factor) {
         return new Complex(
-                this.real * factor.real + this.imaginary * factor.imaginary,
-                this.real * factor.imaginary - this.imaginary * factor.real
-        );
+                this.real * (factor.real + factor.imaginary),
+                this.imaginary * (factor.real + factor.imaginary));
     }
 
     /**
