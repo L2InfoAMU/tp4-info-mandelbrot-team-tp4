@@ -137,4 +137,10 @@ public class ComplexTest {
         assertTrue(new Complex(4,2).equals(new Complex(4,2)));
         assertFalse(new Complex(8,2).equals(new Complex(4,2)));
     }
+
+    @Test
+    void Testreal(){
+        assertEquals(new Complex (16,0).getReal(),new Complex(16,18).real);
+        assertNotEquals(new Complex(8,2).getReal(),new Complex(4,2).real);
+    }
 }
