@@ -151,5 +151,11 @@ public class ComplexTest {
         assertNotEquals(new Complex(8,2).add(new Complex(0, 5)),new Complex(10,5));
     }
 
+    @Test
+    void Testsubtract(){
+        assertEquals(new Complex (16,0).subtract(new Complex(2,3)),new Complex(14,-3));
+        assertNotEquals(new Complex(8,2).subtract(new Complex(2, 5)),new Complex(6,-1));
+        assertNotEquals(new Complex(8,2).subtract(new Complex(0, 5)),new Complex(10,-3));
+    }
 
 }
