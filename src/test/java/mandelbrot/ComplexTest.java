@@ -158,4 +158,11 @@ public class ComplexTest {
         assertNotEquals(new Complex(8,2).subtract(new Complex(0, 5)),new Complex(10,-3));
     }
 
+    @Test
+    void Testmultiply(){
+        assertEquals(new Complex (16,0).multiply(new Complex(2,3)),new Complex(80,0));
+        assertNotEquals(new Complex(8,2).multiply(new Complex(2, 5)),new Complex(56,13));
+        assertNotEquals(new Complex(8,2).multiply(new Complex(0, 5)),new Complex(20,14));
+    }
+
 }
