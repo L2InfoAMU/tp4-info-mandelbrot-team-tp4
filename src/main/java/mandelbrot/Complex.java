@@ -148,7 +148,7 @@ public class Complex {
      * @return a complex number <code>c</code> such that <code>this * c = 1</code>
      */
     Complex reciprocal() {
-        if (this.equals(Complex.ZERO){
+        if (this.equals(Complex.ZERO)){
             throw new ArithmeticException("Divide by a SquaredModulus = 0");
         }
         double m = squaredModulus();
@@ -177,14 +177,14 @@ public class Complex {
      * Integral power of a complex number
      *
      * @param p a non-negative integer
-     * @return the complex number <code>this ** p</code>
+     * @return the complex number <code>this ** p</code>//pas compris
      */
     Complex pow(int p) {
         if (p == 0)
             return Complex.ONE;
         Complex result = (this.multiply(this)).pow(p / 2);
         if (p % 2 == 1)
-            result = result.multiply(this);
+            result = result.multiply(result);
         return result;
     }
 
@@ -195,7 +195,7 @@ public class Complex {
      * @return the complex number <code>lambda * this</code>
      */
     public Complex scale(double lambda) {
-        return new Complex(lambda * real, lambda + imaginary);
+        return new Complex(lambda * this.real, lambda + this.imaginary);
     }
 
 
@@ -206,8 +206,8 @@ public class Complex {
         if (o == null || getClass() != o.getClass())
             return false;
         Complex complex = (Complex) o;
-        return Helpers.doubleCompare(complex.real, real) == 0 &&
-                Helpers.doubleCompare(complex.imaginary, imaginary) == 0;
+        return Helpers.doubleCompare(complex.real, this.real) == 0 &&
+                Helpers.doubleCompare(complex.imaginary, this.imaginary) == 0;
     }
 
     @Override
@@ -219,8 +219,8 @@ public class Complex {
     @Override
     public String toString() {
         return "Complex{" +
-                "real=" + imaginary +
-                ", imaginary=" + imaginary +
+                "real = " + this.real +
+                ", imaginary = " + this.imaginary +
                 '}';
     }
 }
