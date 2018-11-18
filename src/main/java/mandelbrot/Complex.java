@@ -167,8 +167,8 @@ public class Complex {
         }
         double m = divisor.squaredModulus();
         return new Complex(
-                (this.real * divisor.real + this.imaginary * divisor.imaginary) / m,
-                (divisor.imaginary * this.real - divisor.real * this.imaginary) / m
+                (divisor.real * this.real + divisor.imaginary * this.imaginary ) / m,
+                -(divisor.imaginary * this.real - divisor.real * this.imaginary) / m
         );
     }
 
@@ -219,8 +219,8 @@ public class Complex {
     @Override
     public String toString() {
         return "Complex{" +
-                "real = " + this.real +
-                ", imaginary = " + this.imaginary +
+                "real=" + this.real +
+                ", imaginary=" + this.imaginary +
                 '}';
     }
 }
