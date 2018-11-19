@@ -117,8 +117,8 @@ public class Complex {
      * @return the complex number {@code this * factor}
      */
     Complex multiply(Complex factor) {
-        return new Complex(this.real * (factor.real + factor.imaginary),
-                this.imaginary * (factor.real + factor.imaginary));
+        return new Complex(this.real * factor.real - this.imaginary* factor.imaginary,
+                this.real * factor.imaginary + this.imaginary*factor.real);
     }
 
     /**
@@ -179,10 +179,10 @@ public class Complex {
      */
     Complex pow(int p) {
         if (p == 0)
-            return Complex.ONE;
+           return Complex.ONE;
         Complex result = (this.multiply(this)).pow(p / 2);
         if (p % 2 == 1)
-            result = result.multiply(result);
+            result = result.multiply(this);
         return result;
     }
 
@@ -193,7 +193,7 @@ public class Complex {
      * @return the complex number <code>lambda * this</code>
      */
     public Complex scale(double lambda) {
-        return new Complex(lambda * this.real, lambda + this.imaginary);
+        return new Complex(lambda * this.real, lambda * this.imaginary);
     }
 
 
