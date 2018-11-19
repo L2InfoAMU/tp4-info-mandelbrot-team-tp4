@@ -14,7 +14,6 @@ public class ComplexTest {
     private final double real = -12;
     private final double imaginary = 10;
 
-
     @Test
     void testConstructor(){
         assertEquals(0., twoI.real, Helpers.EPSILON);
@@ -166,10 +165,13 @@ public class ComplexTest {
     }
 
     @Test
-    void TestsquareModulus(){
-        assertEquals(new Complex (16,0).multiply(new Complex(2,3)),new Complex(80,0));
-        assertNotEquals(new Complex(8,2).multiply(new Complex(2, 5)),new Complex(56,13));
-        assertNotEquals(new Complex(8,2).multiply(new Complex(0, 5)),new Complex(20,14));
+    void TestsquaredModulus(){
+        assertEquals(new Complex (16,0).squaredModulus(), 256);
+        assertEquals(new Complex (0,15).squaredModulus(), 225);
+        assertEquals(new Complex (15,15).squaredModulus(), 450);
+        assertNotEquals(new Complex (0,15).squaredModulus(), 3);
+        assertNotEquals(new Complex (16,0).squaredModulus(), 4);
+        assertNotEquals(new Complex (15,15).squaredModulus(), 200);
     }
 
 }
