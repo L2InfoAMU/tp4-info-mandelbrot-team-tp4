@@ -196,6 +196,18 @@ public class ComplexTest {
 
     }
 
+    @Test
+    void Testscale(){
+        assertEquals(new Complex (real,imaginary).scale(4), new Complex(real*4,imaginary*4));
+        assertEquals(new Complex (real,imaginary).scale(3), new Complex(real*3,imaginary*3));
+        assertEquals(new Complex (real,imaginary).scale(0), new Complex(real*0,imaginary*0));
+        assertEquals(new Complex (real,imaginary).scale(2), new Complex(real*2,imaginary*2));
+        assertNotEquals(new Complex (real,imaginary).scale(2), new Complex(real*4,imaginary*2));
+        assertNotEquals(new Complex (real,imaginary).scale(2), new Complex(real*2,imaginary*4));
+        assertNotEquals(new Complex (real,imaginary).scale(2), new Complex(real*4,imaginary*4));
+
+    }
+
 
 
 }
