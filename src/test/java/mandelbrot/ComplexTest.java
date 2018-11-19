@@ -174,4 +174,16 @@ public class ComplexTest {
         assertNotEquals(new Complex (15,15).squaredModulus(), 200);
     }
 
+    @Test
+    void Testmodulus(){
+        assertEquals(new Complex (real,imaginary).modulus(), Math.sqrt(244));
+        assertEquals(new Complex (real,0).modulus(), 12);
+        assertEquals(new Complex (0,imaginary).modulus(), 10);
+        assertNotEquals(new Complex (real,0).modulus(), -12);
+        assertNotEquals(new Complex (0,imaginary).modulus(), -10);
+        assertNotEquals(new Complex (real,imaginary).modulus(), 233);
+    }
+
+
+
 }
