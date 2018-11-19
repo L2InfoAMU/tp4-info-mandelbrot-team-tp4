@@ -184,6 +184,18 @@ public class ComplexTest {
         assertNotEquals(new Complex (real,imaginary).modulus(), 233);
     }
 
+    @Test
+    void Testpow(){
+        assertEquals(new Complex (real,imaginary).pow(2), new Complex(real,imaginary).multiply(new Complex(real,imaginary)));
+        assertEquals(new Complex (0,imaginary).pow(2), new Complex(0,imaginary).multiply(new Complex(0,imaginary)));
+        assertEquals(new Complex (real,0).pow(2), new Complex(real,0).multiply(new Complex(real,0)));
+        assertEquals(new Complex (0,imaginary).pow(3), (new Complex(0,imaginary).multiply(new Complex(0,imaginary))).multiply(new Complex(0,imaginary)));
+        assertNotEquals(new Complex (real,imaginary).pow(2), new Complex(real,imaginary).multiply(new Complex(0,0)));
+        assertNotEquals(new Complex (real,0).pow(2), new Complex(real,0).multiply(new Complex(0,imaginary)));
+        assertNotEquals(new Complex (0,imaginary).pow(2), new Complex(0,imaginary).multiply(new Complex(real,0)));
+
+    }
+
 
 
 }
